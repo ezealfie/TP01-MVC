@@ -10,7 +10,7 @@ namespace TP01_ALFIE_FAINSCHTEIN.Models
     {
      private int DNI; 
     private string nombre; 
-    private dateTime nacimiento; 
+    private DateTime nacimiento; 
     private string foto; 
     private List <string> Familiares;
     private List <string> Interesas;  
@@ -22,14 +22,16 @@ namespace TP01_ALFIE_FAINSCHTEIN.Models
 
     this.DNI = DNI; 
     this.nombre  = nombre; 
-    this.nacimiento = nacimiento; 
+    this.nacimiento = new DateTime(nacimiento); 
     this.foto = foto; 
     this.Familiares = Familiares; 
     this.Intereses = Intereses; 
 
-x
-   }
 
+   }
+public int getDNI(){
+    return DNI;
+}
 
 
 
