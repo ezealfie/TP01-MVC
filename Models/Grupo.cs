@@ -15,13 +15,12 @@ namespace TP01_ALFIE_FAINSCHTEIN.Models
           CargaDatosManual();
        }
     public void CargaDatosManual(){
-List<string> Intereses = new List<string>{"Interes 1", "Interes 2"};
-List<string> Familiares = new List<string>{"Persona 1", "Persona 2"};
 
- Integrante luca = new Integrante(50233233, luca, fainschtein, (2000,10,01), "foto", Familiares, Intereses );
- Integrante liam = new Integrante(12345678, liam, perez, (2010,01,05), "foto", Familiares, Intereses );
- Integrante martin = new Integrante(98765432, martin, torres, (2009,09,04), "foto", Familiares, Intereses );
- Integrante matias = new Integrante(12345365, matias, lopez, (2005,07,07), "foto", Familiares, Intereses );
+
+ Integrante luca = new Integrante(50233233, "Luca Fainschtein", (2000,10,01), "luca.webp",  new List<string>{"Mamá: Marta Einmas", "papá: Martin Fainschtein "};,  new List<string>{"Jugar a la play", "Ver la tele"};);
+ Integrante liam = new Integrante(12345678, "Liam   Galanternik",  (2010,01,05), "liam.webp",  new List<string>{"Papá: Nicolas Galanternik", "Mamá: Romina Lopez "};,  new List<string>{"Viajar", "Leer"}; );
+ Integrante martin = new Integrante(98765432, "Martin Torres", (2009,09,04), "martin.webp",  new List<string>{"Mamá: Sofia Cohen", "Papá: Lucas Torres "};,  new List<string>{"Aprender idiomas", "Yoga"}; );
+ Integrante matias = new Integrante(12345365, "Matias Lopez", (2005,07,07), "matias.webp",  new List<string>{"Mamá: Priscila Levy", "Papá: Nicolas Lopez"};,  new List<string>{"Programar", "Estudiar"}; );
 
         Integrantes.Add(luca.getDNI(), luca);     
         Integrantes.Add(liam.getDNI(), liam);     
@@ -33,12 +32,10 @@ List<string> Familiares = new List<string>{"Persona 1", "Persona 2"};
            
         }
     public Integrante getIntegrante(int DNI){
-        if(Integrantes.ContainsKey(DNI)){
+        if(Integrantes.ContainsKey(DNI))
             return Integrantes[DNI];
-        }
-        else{
-            return null;
-        }
+        return null;
+        
 
     }
 

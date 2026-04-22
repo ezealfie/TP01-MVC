@@ -13,7 +13,7 @@ namespace TP01_ALFIE_FAINSCHTEIN.Models
     private DateTime nacimiento; 
     private string foto; 
     private List <string> Familiares;
-    private List <string> Interesas;  
+    private List <string> Intereses;  
 
 
 
@@ -34,23 +34,10 @@ public int getDNI(){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
+public string getName(){
+    return nombre;
+}
 
 
 
