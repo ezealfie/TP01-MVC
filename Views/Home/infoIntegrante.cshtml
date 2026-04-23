@@ -1,0 +1,15 @@
+<div class="text-center">
+<h3>@ViewBag.integrante.getName()</h3>
+<img src="@ViewBag.integrante.getFoto()" alt="foto @ViewBag.integrante.getName()">
+<h4>@ViewBag.integrante.getDNI()</h4>
+<h4>@ViewBag.integrante.getFecha()</h4>
+<p>Sus familiares son:</p>
+@foreach(string familiar in ViewBag.integrante.getFamiliares()){
+    <p>@familiar</p>
+}
+<p>Sus intereses son:</p>
+@foreach(string interes in ViewBag.integrante.getIntereses()){
+    <p>@familiar</p>
+}
+
+</div>

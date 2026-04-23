@@ -17,12 +17,12 @@ namespace TP01_ALFIE_FAINSCHTEIN.Models
 
 
 
-   public Integrante(int DNI, string nombre, dateTime nacimiento, string foto, List<string> Familiares, List<string> Intereses)
+   public Integrante(int DNI, string nombre, DateTime nacimiento, string foto, List<string> Familiares, List<string> Intereses)
    {
 
     this.DNI = DNI; 
     this.nombre  = nombre; 
-    this.nacimiento = new DateTime(nacimiento); 
+    this.nacimiento = nacimiento;
     this.foto = foto; 
     this.Familiares = Familiares; 
     this.Intereses = Intereses; 
@@ -33,18 +33,29 @@ public int getDNI(){
     return DNI;
 }
 
-
+public string getFoto(){
+    return $"/img/{foto}";   
+}
    
 public string getName(){
     return nombre;
 }
 
+    
+
+
+
+public string getFecha(){
+    return nacimiento.ToShortDateString();
+}
+
+public List<string> getFamiliares(){
+    return Familiares;
+}
+public List<string> getIntereses(){
+    return Intereses;
+}
 
 
     }
-
-
-
-
-    
-}
+      }

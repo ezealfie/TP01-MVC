@@ -3,11 +3,13 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-@foreach(Integrante integrante in ViewBag.Integrantes){
-<p>@integrante.getName()</p>
+<h2>Lista de Alumnos</h2>
+@foreach(Integrante integrante in ViewBag.Grupo.Values){
+<a href='@Url.Action("SelectIntegrante", "Home", new {DNI=integrante.getDNI()})'>@integrante.getName()   
+<img src="@integrante.getFoto()" alt="foto @integrante.getName()">
 
+</a>
+<br>
 }
 
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
