@@ -3,13 +3,21 @@
 }
 
 <div class="text-center">
-<h2>Lista de Alumnos</h2>
-@foreach(Integrante integrante in ViewBag.Grupo.Values){
-<a href='@Url.Action("SelectIntegrante", "Home", new {DNI=integrante.getDNI()})'>@integrante.getName()   
-<img src="@integrante.getFoto()" alt="foto @integrante.getName()">
+    <h2>Lista de Alumnos</h2>
+    <div class="lista">
+        <ul>
+            @foreach (Integrante integrante in ViewBag.Grupo.Values)
+            {
+                <div>
+                    <li><a href='@Url.Action("SelectIntegrante", "Home", new { DNI = integrante.getDNI() })'>
+                        <img src="@integrante.getFoto()" alt="foto @integrante.getName()"> <br>@integrante.getName()
+                    </a>
+                </li>
+            </div>
 
-</a>
-<br>
-}
+            <br>
+        }
+    </ul>
+</div>
 
 </div>
